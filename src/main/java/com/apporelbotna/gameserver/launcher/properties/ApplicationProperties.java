@@ -1,4 +1,4 @@
-package properties;
+package com.apporelbotna.gameserver.launcher.properties;
 
 import java.io.FileInputStream;
 import java.io.IOException;

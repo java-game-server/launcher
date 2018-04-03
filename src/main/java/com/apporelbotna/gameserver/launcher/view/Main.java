@@ -1,4 +1,4 @@
-package view;
+package com.apporelbotna.gameserver.launcher.view;
 
 public class Main {
 	

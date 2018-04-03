@@ -1,4 +1,4 @@
-package games;
+package com.apporelbotna.gameserver.launcher.games;
 
 import java.io.IOException;
 

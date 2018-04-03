@@ -1,4 +1,4 @@
-package games;
+package com.apporelbotna.gameserver.launcher.games;
 
 public class GameManager
 {

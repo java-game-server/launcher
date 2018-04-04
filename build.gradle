@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
 	// PersistenceWS Stubs
-	compile 'com.github.java-game-server:stubs:master-SNAPSHOT'
+	compile 'com.github.java-game-server:stubs:0.5.1'
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:21.0'

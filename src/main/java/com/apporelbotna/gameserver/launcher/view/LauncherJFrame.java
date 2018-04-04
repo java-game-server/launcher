@@ -162,6 +162,8 @@ public class LauncherJFrame extends javax.swing.JFrame {
         password2RegisterLabel = new javax.swing.JLabel();
         password2RegisterField = new javax.swing.JPasswordField();
         registerRegisterBtn = new javax.swing.JButton();
+        registerLoginBtn = new javax.swing.JButton();
+        errorFieldLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -222,18 +224,41 @@ public class LauncherJFrame extends javax.swing.JFrame {
         launcherJPanel.add(registerRegisterBtn);
         registerRegisterBtn.setBounds(680, 750, 240, 40);
         
-        registerLoginBtn = new JButton();
+        registerLoginBtn.setText("Back to Login");
+        registerLoginBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
+        registerLoginBtn.setBackground(Color.BLACK);
+        registerLoginBtn.setBounds(653, 845, 300, 30);
+        launcherJPanel.add(registerLoginBtn);
+        
+        errorFieldLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
+        errorFieldLabel.setForeground(Color.RED);
+        
         registerLoginBtn.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		launcherJPanel.removeAll();
         		initLoginComponents();
         	}
         });
-        registerLoginBtn.setText("Back to Login");
-        registerLoginBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
-        registerLoginBtn.setBackground(Color.BLACK);
-        registerLoginBtn.setBounds(653, 845, 300, 30);
-        launcherJPanel.add(registerLoginBtn);
+        
+        registerRegisterBtn.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		if(emailRegisterField.getText().isEmpty()||usernameRegisterField.getText().isEmpty()||passwordRegisterField.getText().isEmpty()||password2RegisterField.getText().isEmpty()) {
+        			errorFieldLabel.setText("Fill all the fields");
+        			launcherJPanel.add(errorFieldLabel , 0);
+        			errorFieldLabel.setBounds(650, 800, 400, 30);
+        		}
+        		else if(!(new String(passwordRegisterField.getPassword()).equals(new String(password2RegisterField.getPassword())))) {
+        			errorFieldLabel.setText("The passwords does not match");
+        			launcherJPanel.add(errorFieldLabel , 0);
+    				errorFieldLabel.setBounds(500, 800, 600, 30);
+    				passwordRegisterField.setText("");
+    				password2RegisterField.setText("");
+    			}
+        		else {
+        			errorFieldLabel.setText("");
+        		}
+        	}
+        });
 
         background.setIcon(new ImageIcon(LauncherJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Register.png"))); // NOI18N
         launcherJPanel.add(background);
@@ -274,4 +299,5 @@ public class LauncherJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel usernameRegisterLabel;
     private JButton registerLoginBtn;
     private JLabel wrongLoginLabel;
+    private JLabel errorFieldLabel;
 }

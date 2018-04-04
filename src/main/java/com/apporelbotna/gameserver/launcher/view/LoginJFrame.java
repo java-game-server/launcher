@@ -9,6 +9,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
@@ -32,7 +34,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        loginJPanel = new javax.swing.JPanel();
         emailLabel = new javax.swing.JLabel();
         emailField = new javax.swing.JTextField();
         passwordLabel = new javax.swing.JLabel();
@@ -42,52 +44,55 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1600, 900));
-        jPanel1.setLayout(null);
+        loginJPanel.setPreferredSize(new java.awt.Dimension(1600, 900));
+        loginJPanel.setLayout(null);
 
         emailLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
         emailLabel.setForeground(new java.awt.Color(240, 240, 240));
         emailLabel.setText("email");
-        jPanel1.add(emailLabel);
+        loginJPanel.add(emailLabel);
         emailLabel.setBounds(740, 450, 110, 30);
 
         emailField.setFont(new java.awt.Font("Blackoak Std", 0, 13)); // NOI18N
         emailField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         emailField.setToolTipText("Type Username");
-        jPanel1.add(emailField);
+        loginJPanel.add(emailField);
         emailField.setBounds(680, 480, 240, 30);
 
         passwordLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
         passwordLabel.setForeground(new java.awt.Color(240, 240, 240));
         passwordLabel.setText("Password");
-        jPanel1.add(passwordLabel);
+        loginJPanel.add(passwordLabel);
         passwordLabel.setBounds(710, 550, 190, 40);
 
         passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(passwordField);
+        loginJPanel.add(passwordField);
         passwordField.setBounds(680, 590, 240, 30);
 
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
         loginBtn.setFont(new java.awt.Font("Blackoak Std", 1, 16)); // NOI18N
         loginBtn.setText("OkeyOkey");
-        jPanel1.add(loginBtn);
+        loginJPanel.add(loginBtn);
         loginBtn.setBounds(680, 680, 240, 40);
         
         JButton registerBtn = new JButton();
         registerBtn.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
+        		RegisterJFrame registerJFrame = new RegisterJFrame();
+        		registerJFrame.setVisible(true);
+        		loginJPanel.setVisible(false);
         	}
         });
         registerBtn.setText("\u00A1Register here!");
         registerBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
         registerBtn.setBackground(Color.BLACK);
         registerBtn.setBounds(653, 842, 317, 30);
-        jPanel1.add(registerBtn);
+        loginJPanel.add(registerBtn);
 
         background.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Login.png"))); // NOI18N
+        background.setIcon(new ImageIcon(LoginJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Login.png"))); // NOI18N
         background.setToolTipText("");
-        jPanel1.add(background);
+        loginJPanel.add(background);
         background.setBounds(0, -10, 1640, 920);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,15 +100,15 @@ public class LoginJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loginJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(loginJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("");
+        loginJPanel.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,7 +152,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel loginJPanel;
     private javax.swing.JButton loginBtn;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;

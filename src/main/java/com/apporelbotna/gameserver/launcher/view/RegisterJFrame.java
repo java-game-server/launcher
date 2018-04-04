@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -32,7 +33,7 @@ public class RegisterJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        registerJPanel = new javax.swing.JPanel();
         emailRegisterLabel = new javax.swing.JLabel();
         emailRegisterField = new javax.swing.JTextField();
         usernameRegisterLabel = new javax.swing.JLabel();
@@ -46,13 +47,13 @@ public class RegisterJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1600, 900));
-        jPanel1.setLayout(null);
+        registerJPanel.setPreferredSize(new java.awt.Dimension(1600, 900));
+        registerJPanel.setLayout(null);
 
         emailRegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
         emailRegisterLabel.setForeground(new java.awt.Color(240, 240, 240));
         emailRegisterLabel.setText("email");
-        jPanel1.add(emailRegisterLabel);
+        registerJPanel.add(emailRegisterLabel);
         emailRegisterLabel.setBounds(740, 410, 109, 30);
 
         emailRegisterField.setFont(new java.awt.Font("Blackoak Std", 0, 13)); // NOI18N
@@ -63,13 +64,13 @@ public class RegisterJFrame extends javax.swing.JFrame {
                 emailRegisterFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(emailRegisterField);
+        registerJPanel.add(emailRegisterField);
         emailRegisterField.setBounds(680, 440, 240, 30);
 
         usernameRegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
         usernameRegisterLabel.setForeground(new java.awt.Color(240, 240, 240));
         usernameRegisterLabel.setText("alias");
-        jPanel1.add(usernameRegisterLabel);
+        registerJPanel.add(usernameRegisterLabel);
         usernameRegisterLabel.setBounds(750, 490, 120, 30);
 
         usernameRegisterField.setFont(new java.awt.Font("Blackoak Std", 0, 13)); // NOI18N
@@ -80,13 +81,13 @@ public class RegisterJFrame extends javax.swing.JFrame {
                 usernameRegisterFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(usernameRegisterField);
+        registerJPanel.add(usernameRegisterField);
         usernameRegisterField.setBounds(680, 520, 240, 30);
 
         passwordRegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
         passwordRegisterLabel.setForeground(new java.awt.Color(240, 240, 240));
         passwordRegisterLabel.setText("password");
-        jPanel1.add(passwordRegisterLabel);
+        registerJPanel.add(passwordRegisterLabel);
         passwordRegisterLabel.setBounds(710, 570, 190, 40);
 
         passwordRegisterField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -95,13 +96,13 @@ public class RegisterJFrame extends javax.swing.JFrame {
                 passwordRegisterFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordRegisterField);
+        registerJPanel.add(passwordRegisterField);
         passwordRegisterField.setBounds(680, 610, 240, 30);
 
         password2RegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
         password2RegisterLabel.setForeground(new java.awt.Color(240, 240, 240));
         password2RegisterLabel.setText("repeat password");
-        jPanel1.add(password2RegisterLabel);
+        registerJPanel.add(password2RegisterLabel);
         password2RegisterLabel.setBounds(650, 650, 330, 40);
 
         password2RegisterField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -110,39 +111,42 @@ public class RegisterJFrame extends javax.swing.JFrame {
                 password2RegisterFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(password2RegisterField);
+        registerJPanel.add(password2RegisterField);
         password2RegisterField.setBounds(680, 690, 240, 30);
 
         registerBtn.setBackground(new java.awt.Color(0, 0, 0));
         registerBtn.setFont(new java.awt.Font("Blackoak Std", 1, 16)); // NOI18N
         registerBtn.setText("OkeyOkey");
-        jPanel1.add(registerBtn);
+        registerJPanel.add(registerBtn);
         registerBtn.setBounds(680, 750, 240, 40);
         
         loginBtn = new JButton();
         loginBtn.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
+        		LoginJFrame loginJFrame = new LoginJFrame();
+        		loginJFrame.setVisible(true);
+        		registerJPanel.setVisible(false);
         	}
         });
         loginBtn.setText("Back to Login");
         loginBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
         loginBtn.setBackground(Color.BLACK);
         loginBtn.setBounds(653, 845, 300, 30);
-        jPanel1.add(loginBtn);
+        registerJPanel.add(loginBtn);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Register.png"))); // NOI18N
-        jPanel1.add(background);
+        background.setIcon(new ImageIcon(RegisterJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Register.png"))); // NOI18N
+        registerJPanel.add(background);
         background.setBounds(0, 0, 1600, 900);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(registerJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(registerJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -203,7 +207,7 @@ public class RegisterJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JTextField emailRegisterField;
     private javax.swing.JLabel emailRegisterLabel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel registerJPanel;
     private javax.swing.JPasswordField password2RegisterField;
     private javax.swing.JLabel password2RegisterLabel;
     private javax.swing.JPasswordField passwordRegisterField;

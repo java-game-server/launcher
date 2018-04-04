@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
 	// PersistenceWS Stubs
-	compileOnly 'com.github.java-game-server:stubs:0.6.0'
+	compileOnly 'com.github.java-game-server:stubs:0.6.2'
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:21.0'
@@ -31,6 +31,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     // https://mvnrepository.com/artifact/org.netbeans.external/AbsoluteLayout
-	compile group: 'org.netbeans.external', name: 'AbsoluteLayout', version: 'RELEASE82'
+	compileOnly group: 'org.netbeans.external', name: 'AbsoluteLayout', version: 'RELEASE82'
 }
 

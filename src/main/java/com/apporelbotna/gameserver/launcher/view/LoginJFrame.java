@@ -22,6 +22,7 @@ public class LoginJFrame extends javax.swing.JFrame {
      * Creates new form LoginJFrame
      */
     public LoginJFrame() {
+    	launcherJPanel = new javax.swing.JPanel();
         initComponents();
     }
 
@@ -34,86 +35,218 @@ public class LoginJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        loginJPanel = new javax.swing.JPanel();
         emailLabel = new javax.swing.JLabel();
         emailField = new javax.swing.JTextField();
         passwordLabel = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         loginBtn = new javax.swing.JButton();
-        backgroundLogin = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        loginJPanel.setPreferredSize(new java.awt.Dimension(1600, 900));
-        loginJPanel.setLayout(null);
+        launcherJPanel.setPreferredSize(new java.awt.Dimension(1600, 900));
+        launcherJPanel.setLayout(null);
 
         emailLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
         emailLabel.setForeground(new java.awt.Color(240, 240, 240));
         emailLabel.setText("email");
-        loginJPanel.add(emailLabel);
+        launcherJPanel.add(emailLabel);
         emailLabel.setBounds(740, 450, 110, 30);
 
         emailField.setFont(new java.awt.Font("Blackoak Std", 0, 13)); // NOI18N
         emailField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         emailField.setToolTipText("Type Username");
-        loginJPanel.add(emailField);
+        launcherJPanel.add(emailField);
         emailField.setBounds(680, 480, 240, 30);
 
         passwordLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
         passwordLabel.setForeground(new java.awt.Color(240, 240, 240));
         passwordLabel.setText("Password");
-        loginJPanel.add(passwordLabel);
+        launcherJPanel.add(passwordLabel);
         passwordLabel.setBounds(710, 550, 190, 40);
 
         passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        loginJPanel.add(passwordField);
+        launcherJPanel.add(passwordField);
         passwordField.setBounds(680, 590, 240, 30);
 
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
         loginBtn.setFont(new java.awt.Font("Blackoak Std", 1, 16)); // NOI18N
         loginBtn.setText("OkeyOkey");
-        loginJPanel.add(loginBtn);
+        launcherJPanel.add(loginBtn);
         loginBtn.setBounds(680, 680, 240, 40);
         
         JButton registerBtn = new JButton();
-        
+        registerBtn.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		launcherJPanel.removeAll();
+        		initComponents2();
+        	}
+        });
         registerBtn.setText("\u00A1Register here!");
         registerBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
         registerBtn.setBackground(Color.BLACK);
         registerBtn.setBounds(653, 842, 317, 30);
-        loginJPanel.add(registerBtn);
+        launcherJPanel.add(registerBtn);
 
-        backgroundLogin.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
-        backgroundLogin.setIcon(new ImageIcon(LoginJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Login.png"))); // NOI18N
-        backgroundLogin.setToolTipText("");
-        loginJPanel.add(backgroundLogin);
-        backgroundLogin.setBounds(0, -10, 1640, 920);
-        
-        registerBtn.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent arg0) {
-        		RegisterJFrame registerJFrame = new RegisterJFrame();
-        		registerJFrame.setVisible(true);
-        		loginJPanel.setVisible(false);
-        	}
-        });
+        background.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        background.setIcon(new ImageIcon(LoginJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Login.png"))); // NOI18N
+        background.setToolTipText("");
+        launcherJPanel.add(background);
+        background.setBounds(0, -10, 1640, 920);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(loginJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(launcherJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(loginJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(launcherJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        loginJPanel.getAccessibleContext().setAccessibleName("");
+        launcherJPanel.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void initComponents2() {
+
+        emailRegisterLabel = new javax.swing.JLabel();
+        emailRegisterField = new javax.swing.JTextField();
+        usernameRegisterLabel = new javax.swing.JLabel();
+        usernameRegisterField = new javax.swing.JTextField();
+        passwordRegisterLabel = new javax.swing.JLabel();
+        passwordRegisterField = new javax.swing.JPasswordField();
+        password2RegisterLabel = new javax.swing.JLabel();
+        password2RegisterField = new javax.swing.JPasswordField();
+        registerRegisterBtn = new javax.swing.JButton();
+        backgroundRegister = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        launcherJPanel.setPreferredSize(new java.awt.Dimension(1600, 900));
+        launcherJPanel.setLayout(null);
+
+        emailRegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
+        emailRegisterLabel.setForeground(new java.awt.Color(240, 240, 240));
+        emailRegisterLabel.setText("email");
+        launcherJPanel.add(emailRegisterLabel);
+        emailRegisterLabel.setBounds(740, 410, 109, 30);
+
+        emailRegisterField.setFont(new java.awt.Font("Blackoak Std", 0, 13)); // NOI18N
+        emailRegisterField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        emailRegisterField.setToolTipText("Type Username");
+        emailRegisterField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailRegisterFieldActionPerformed(evt);
+            }
+        });
+        launcherJPanel.add(emailRegisterField);
+        emailRegisterField.setBounds(680, 440, 240, 30);
+
+        usernameRegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
+        usernameRegisterLabel.setForeground(new java.awt.Color(240, 240, 240));
+        usernameRegisterLabel.setText("alias");
+        launcherJPanel.add(usernameRegisterLabel);
+        usernameRegisterLabel.setBounds(750, 490, 120, 30);
+
+        usernameRegisterField.setFont(new java.awt.Font("Blackoak Std", 0, 13)); // NOI18N
+        usernameRegisterField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usernameRegisterField.setToolTipText("Type Username");
+        usernameRegisterField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameRegisterFieldActionPerformed(evt);
+            }
+        });
+        launcherJPanel.add(usernameRegisterField);
+        usernameRegisterField.setBounds(680, 520, 240, 30);
+
+        passwordRegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
+        passwordRegisterLabel.setForeground(new java.awt.Color(240, 240, 240));
+        passwordRegisterLabel.setText("password");
+        launcherJPanel.add(passwordRegisterLabel);
+        passwordRegisterLabel.setBounds(710, 570, 190, 40);
+
+        passwordRegisterField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passwordRegisterField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordRegisterFieldActionPerformed(evt);
+            }
+        });
+        launcherJPanel.add(passwordRegisterField);
+        passwordRegisterField.setBounds(680, 610, 240, 30);
+
+        password2RegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
+        password2RegisterLabel.setForeground(new java.awt.Color(240, 240, 240));
+        password2RegisterLabel.setText("repeat password");
+        launcherJPanel.add(password2RegisterLabel);
+        password2RegisterLabel.setBounds(650, 650, 330, 40);
+
+        password2RegisterField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password2RegisterField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password2RegisterFieldActionPerformed(evt);
+            }
+        });
+        launcherJPanel.add(password2RegisterField);
+        password2RegisterField.setBounds(680, 690, 240, 30);
+
+        registerRegisterBtn.setBackground(new java.awt.Color(0, 0, 0));
+        registerRegisterBtn.setFont(new java.awt.Font("Blackoak Std", 1, 16)); // NOI18N
+        registerRegisterBtn.setText("OkeyOkey");
+        launcherJPanel.add(registerRegisterBtn);
+        registerRegisterBtn.setBounds(680, 750, 240, 40);
+        
+        registerLoginBtn = new JButton();
+        registerLoginBtn.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		launcherJPanel.removeAll();
+        		initComponents();
+        	}
+        });
+        registerLoginBtn.setText("Back to Login");
+        registerLoginBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
+        registerLoginBtn.setBackground(Color.BLACK);
+        registerLoginBtn.setBounds(653, 845, 300, 30);
+        launcherJPanel.add(registerLoginBtn);
+
+        backgroundRegister.setIcon(new ImageIcon(LoginJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Register.png"))); // NOI18N
+        launcherJPanel.add(backgroundRegister);
+        backgroundRegister.setBounds(0, 0, 1600, 900);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(launcherJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(launcherJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }
+    
+    // </editor-fold>//GEN-END:initComponents
+    private void passwordRegisterFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordRegisterFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordRegisterFieldActionPerformed
+
+    private void emailRegisterFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailRegisterFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailRegisterFieldActionPerformed
+
+    private void usernameRegisterFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameRegisterFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameRegisterFieldActionPerformed
+
+    private void password2RegisterFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password2RegisterFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_password2RegisterFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,17 +279,29 @@ public class LoginJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
             	LoginJFrame launcherJFrame = new LoginJFrame();
-            	launcherJFrame.setVisible(true);
+                launcherJFrame.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel backgroundLogin;
+    private javax.swing.JLabel background;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JPanel loginJPanel;
+    private javax.swing.JPanel launcherJPanel;
     private javax.swing.JButton loginBtn;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;
+    
+    private javax.swing.JLabel backgroundRegister;
+    private javax.swing.JTextField emailRegisterField;
+    private javax.swing.JLabel emailRegisterLabel;
+    private javax.swing.JPasswordField password2RegisterField;
+    private javax.swing.JLabel password2RegisterLabel;
+    private javax.swing.JPasswordField passwordRegisterField;
+    private javax.swing.JLabel passwordRegisterLabel;
+    private javax.swing.JButton registerRegisterBtn;
+    private javax.swing.JTextField usernameRegisterField;
+    private javax.swing.JLabel usernameRegisterLabel;
+    private JButton registerLoginBtn;
 }

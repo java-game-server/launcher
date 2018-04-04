@@ -40,7 +40,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         loginBtn = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+        backgroundLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +76,19 @@ public class LoginJFrame extends javax.swing.JFrame {
         loginBtn.setBounds(680, 680, 240, 40);
         
         JButton registerBtn = new JButton();
+        
+        registerBtn.setText("\u00A1Register here!");
+        registerBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
+        registerBtn.setBackground(Color.BLACK);
+        registerBtn.setBounds(653, 842, 317, 30);
+        loginJPanel.add(registerBtn);
+
+        backgroundLogin.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        backgroundLogin.setIcon(new ImageIcon(LoginJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Login.png"))); // NOI18N
+        backgroundLogin.setToolTipText("");
+        loginJPanel.add(backgroundLogin);
+        backgroundLogin.setBounds(0, -10, 1640, 920);
+        
         registerBtn.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		RegisterJFrame registerJFrame = new RegisterJFrame();
@@ -83,17 +96,6 @@ public class LoginJFrame extends javax.swing.JFrame {
         		loginJPanel.setVisible(false);
         	}
         });
-        registerBtn.setText("\u00A1Register here!");
-        registerBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
-        registerBtn.setBackground(Color.BLACK);
-        registerBtn.setBounds(653, 842, 317, 30);
-        loginJPanel.add(registerBtn);
-
-        background.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
-        background.setIcon(new ImageIcon(LoginJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Login.png"))); // NOI18N
-        background.setToolTipText("");
-        loginJPanel.add(background);
-        background.setBounds(0, -10, 1640, 920);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,13 +145,14 @@ public class LoginJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginJFrame().setVisible(true);
+            	LoginJFrame launcherJFrame = new LoginJFrame();
+            	launcherJFrame.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel background;
+    private javax.swing.JLabel backgroundLogin;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JPanel loginJPanel;

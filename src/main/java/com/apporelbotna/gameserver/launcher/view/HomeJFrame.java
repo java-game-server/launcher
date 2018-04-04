@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.apporelbotna.gameserver.launcher.view;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -27,17 +28,28 @@ public class HomeJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        homeJPanel = new javax.swing.JPanel();
+        background = new javax.swing.JLabel();
+        background.setIcon(new ImageIcon(HomeJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Home.png")));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        homeJPanel.setMinimumSize(new java.awt.Dimension(1600, 900));
+        homeJPanel.setPreferredSize(new java.awt.Dimension(1600, 900));
+        homeJPanel.setLayout(null);
+        homeJPanel.add(background);
+        background.setBounds(0, 0, 1600, 900);
+        background.getAccessibleContext().setAccessibleName("background");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(homeJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(homeJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +91,7 @@ public class HomeJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
+    private javax.swing.JPanel homeJPanel;
     // End of variables declaration//GEN-END:variables
 }

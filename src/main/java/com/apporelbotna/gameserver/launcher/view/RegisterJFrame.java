@@ -42,8 +42,8 @@ public class RegisterJFrame extends javax.swing.JFrame {
         passwordRegisterField = new javax.swing.JPasswordField();
         password2RegisterLabel = new javax.swing.JLabel();
         password2RegisterField = new javax.swing.JPasswordField();
-        registerBtn = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+        registerRegisterBtn = new javax.swing.JButton();
+        backgroundRegister = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,11 +114,11 @@ public class RegisterJFrame extends javax.swing.JFrame {
         registerJPanel.add(password2RegisterField);
         password2RegisterField.setBounds(680, 690, 240, 30);
 
-        registerBtn.setBackground(new java.awt.Color(0, 0, 0));
-        registerBtn.setFont(new java.awt.Font("Blackoak Std", 1, 16)); // NOI18N
-        registerBtn.setText("OkeyOkey");
-        registerJPanel.add(registerBtn);
-        registerBtn.setBounds(680, 750, 240, 40);
+        registerRegisterBtn.setBackground(new java.awt.Color(0, 0, 0));
+        registerRegisterBtn.setFont(new java.awt.Font("Blackoak Std", 1, 16)); // NOI18N
+        registerRegisterBtn.setText("OkeyOkey");
+        registerJPanel.add(registerRegisterBtn);
+        registerRegisterBtn.setBounds(680, 750, 240, 40);
         
         loginBtn = new JButton();
         loginBtn.addActionListener(new ActionListener() {
@@ -134,9 +134,9 @@ public class RegisterJFrame extends javax.swing.JFrame {
         loginBtn.setBounds(653, 845, 300, 30);
         registerJPanel.add(loginBtn);
 
-        background.setIcon(new ImageIcon(RegisterJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Register.png"))); // NOI18N
-        registerJPanel.add(background);
-        background.setBounds(0, 0, 1600, 900);
+        backgroundRegister.setIcon(new ImageIcon(RegisterJFrame.class.getResource("/com/apporelbotna/gameserver/launcher/resources/Register.png"))); // NOI18N
+        registerJPanel.add(backgroundRegister);
+        backgroundRegister.setBounds(0, 0, 1600, 900);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -204,7 +204,7 @@ public class RegisterJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel background;
+    private javax.swing.JLabel backgroundRegister;
     private javax.swing.JTextField emailRegisterField;
     private javax.swing.JLabel emailRegisterLabel;
     private javax.swing.JPanel registerJPanel;
@@ -212,7 +212,7 @@ public class RegisterJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel password2RegisterLabel;
     private javax.swing.JPasswordField passwordRegisterField;
     private javax.swing.JLabel passwordRegisterLabel;
-    private javax.swing.JButton registerBtn;
+    private javax.swing.JButton registerRegisterBtn;
     private javax.swing.JTextField usernameRegisterField;
     private javax.swing.JLabel usernameRegisterLabel;
     private JButton loginBtn;

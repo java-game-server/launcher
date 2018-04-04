@@ -5,6 +5,8 @@
  */
 package com.apporelbotna.gameserver.launcher.view;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JButton;
 
 /**
  *
@@ -37,6 +39,22 @@ public class HomeJFrame extends javax.swing.JFrame {
         homeJPanel.setMinimumSize(new java.awt.Dimension(1600, 900));
         homeJPanel.setPreferredSize(new java.awt.Dimension(1600, 900));
         homeJPanel.setLayout(null);
+        
+        JLabel gameNameDisplay = new JLabel("New label");
+        gameNameDisplay.setBounds(912, 491, 56, 16);
+        homeJPanel.add(gameNameDisplay);
+        
+        JLabel gameDescriptionDisplay = new JLabel("New label");
+        gameDescriptionDisplay.setBounds(912, 535, 56, 16);
+        homeJPanel.add(gameDescriptionDisplay);
+        
+        JLabel gameImageDisplay = new JLabel("");
+        gameImageDisplay.setBounds(896, 13, 358, 449);
+        homeJPanel.add(gameImageDisplay);
+        
+        JButton gamePlayButton = new JButton("New button");
+        gamePlayButton.setBounds(893, 593, 97, 25);
+        homeJPanel.add(gamePlayButton);
         homeJPanel.add(background);
         background.setBounds(0, 0, 1600, 900);
         background.getAccessibleContext().setAccessibleName("background");
@@ -93,5 +111,4 @@ public class HomeJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JPanel homeJPanel;
-    // End of variables declaration//GEN-END:variables
 }

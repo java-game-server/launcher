@@ -9,76 +9,132 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-// REFACTOR
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * An utility class to download images from the Internet and place them into a JLabel with the
+ * desired transformations, all in one line.
+ *
+ * @author Jendoliver
+ * @see http://square.github.io/picasso/	(Original idea for Android)
+ *
+ */
 public class Jenasso
 {
-	public static class ImageLoaderBuilderUrl
+	private static final Logger logger = LoggerFactory.getLogger(Jenasso.class);
+
+	private Jenasso()
+	{
+
+	}
+
+	public static class JenassoBuilderUrl
 	{
 		private URL url;
 
-		private ImageLoaderBuilderUrl(URL url)
+		private JenassoBuilderUrl(URL url)
 		{
 			this.url = url;
 		}
 
-		public ImageLoaderBuilderEndpoint loadInto(JLabel label)
+		/**
+		 * Tells Jenasso where to load the image into. You will still need to call <b>please()</b>
+		 * on the returned JenassoBuilderEndpoint for Jenasso to make your desires true.
+		 *
+		 * @param label The JLabel in which to load the image
+		 * @return A JenassoBuilderEndpoint, which allows the user either to terminate the build
+		 * or to add some transformations to the image before finishing
+		 */
+		public JenassoBuilderEndpoint loadInto(JLabel label)
 		{
 			try
 			{
-				return new ImageLoaderBuilderEndpoint(ImageIO.read(url), label);
+				return new JenassoBuilderEndpoint(ImageIO.read(url), label);
 			}
 			catch (IOException e)
 			{
-				e.printStackTrace();
+				logger.error(e.getMessage());
 			}
 			return null;
 		}
 	}
 
-	public static class ImageLoaderBuilderEndpoint
+	public static class JenassoBuilderEndpoint
 	{
 		private Image image;
 		private JLabel label;
 
-		private ImageLoaderBuilderEndpoint(Image image, JLabel label)
+		private JenassoBuilderEndpoint(Image image, JLabel label)
 		{
 			this.image = image;
 			this.label = label;
 		}
 
-		public ImageLoaderBuilderTransforms and()
+		/**
+		 * Returns an instance of JenassoBuilderTransforms, which allows the user to transform the
+		 * image before finally placing it into the label
+		 *
+		 * @return A builder which image transform methods
+		 */
+		public JenassoBuilderTransforms and()
 		{
-			return new ImageLoaderBuilderTransforms(this);
+			return new JenassoBuilderTransforms(this);
 		}
 
+		/**
+		 * <b>Executes the previously given instructions (terminal operation)</b>
+		 *
+		 * <i>You have to be polite with Jenasso if you want it to execute your desires</i>
+		 */
 		public void please()
 		{
 			label.setIcon(new ImageIcon(image));
 		}
 	}
 
-	public static class ImageLoaderBuilderTransforms
+	public static class JenassoBuilderTransforms
 	{
-		private ImageLoaderBuilderEndpoint endpoint;
+		private JenassoBuilderEndpoint endpoint;
 
-		private ImageLoaderBuilderTransforms(ImageLoaderBuilderEndpoint endpoint)
+		private JenassoBuilderTransforms(JenassoBuilderEndpoint endpoint)
 		{
 			this.endpoint = endpoint;
 		}
 
-		public ImageLoaderBuilderEndpoint scaleToFit()
+		/**
+		 * Scales the image so it fits all the label
+		 *
+		 * @return The calling JenassoBuilderEndpoint, which allows to call <b>please()</b> to
+		 * terminate the building
+		 */
+		public JenassoBuilderEndpoint scaleToFit()
 		{
 			endpoint.image = ImageUtils.scaleToFit(endpoint.image, endpoint.label);
 			return endpoint;
 		}
 	}
 
-	public static ImageLoaderBuilderUrl from(URL url)
+	/**
+	 * Entry point for Jenasso to start managing your images
+	 *
+	 * @param url The URL object pointing to your desired image
+	 * @return A JenassoBuilderUrl instance, which will allow the user to define where to put
+	 * the image
+	 */
+	public static JenassoBuilderUrl from(URL url)
 	{
-		return new ImageLoaderBuilderUrl(url);
+		return new JenassoBuilderUrl(url);
 	}
 
-	public static ImageLoaderBuilderUrl from(String url)
+	/**
+	 * Entry point for Jenasso to start managing your images
+	 *
+	 * @param url The URL String referencing to your desired image
+	 * @return A JenassoBuilderUrl instance, which will allow the user to define where to put
+	 * the image
+	 */
+	public static JenassoBuilderUrl from(String url)
 	{
 		try
 		{
@@ -86,7 +142,7 @@ public class Jenasso
 		}
 		catch (MalformedURLException e)
 		{
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 		return null;
 	}

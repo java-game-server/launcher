@@ -86,7 +86,7 @@ public class LoginPanel extends ChangeablePanel {
 	        registerBtn.setText("\u00A1Register here!");
 	        registerBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
 	        registerBtn.setBackground(Color.BLACK);
-	        registerBtn.setBounds(470, 790, 317, 30);
+	        registerBtn.setBounds(450, 790, 350, 30);
 	        add(registerBtn);
 	        
 	        wrongLoginLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N

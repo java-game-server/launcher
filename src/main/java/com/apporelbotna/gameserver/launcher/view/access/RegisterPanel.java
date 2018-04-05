@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import com.apporelbotna.gameserver.launcher.view.ChangeablePanel;
+import com.apporelbotna.gameserver.persistencewsclient.GameDAO;
+import com.apporelbotna.gameserver.stubs.User;
 
 public class RegisterPanel extends ChangeablePanel {
 
@@ -28,6 +30,8 @@ public class RegisterPanel extends ChangeablePanel {
     private JLabel errorFieldLabel;
     
     private OnPanelChangeListener listener;
+    
+    private GameDAO gameDAO = new GameDAO();
     
 	public RegisterPanel() {
 		super();
@@ -150,14 +154,23 @@ public class RegisterPanel extends ChangeablePanel {
 			}
     		else 
     		{
-    			if(1==2) //TODO Check if email already registered
+    			User newUser = gameDAO.getUserInformation(emailRegisterField.getText());
+    			if(newUser!=null)
     			{
-    				
+    				errorFieldLabel.setText("This email is already used");
+    				passwordRegisterField.setText("");
+    				password2RegisterField.setText("");
     			}
     			else 
     			{
-    				//TODO Register Player
-    				listener.onPanelChange(new LoginPanel());
+    				if(gameDAO.createUser(new User(emailRegisterField.getText(),usernameRegisterField.getText()),new String(passwordRegisterField.getPassword())))
+    				{
+    					listener.onPanelChange(new LoginPanel());
+    				}
+    				else
+    				{
+    					errorFieldLabel.setText("Database error, user can not be created");
+    				} 				
     			}
     		}
         });

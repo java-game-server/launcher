@@ -9,6 +9,8 @@ import javax.swing.SwingConstants;
 
 import com.apporelbotna.gameserver.launcher.view.ChangeablePanel;
 import com.apporelbotna.gameserver.launcher.view.home.HomeMainPanel;
+import com.apporelbotna.gameserver.persistencewsclient.GameDAO;
+import com.apporelbotna.gameserver.stubs.Token;
 
 public class LoginPanel extends ChangeablePanel {
 
@@ -26,6 +28,8 @@ public class LoginPanel extends ChangeablePanel {
     
     private OnPanelChangeListener listener;
 	
+    private GameDAO gameDAO = new GameDAO();
+    
 	public LoginPanel() {
 		super();
 		background = new javax.swing.JLabel();
@@ -112,7 +116,8 @@ public class LoginPanel extends ChangeablePanel {
 	        	}
 	        	else
 	        	{
-	        		if(1==2) //TODO CHECK LOGIN
+	        		Token userToken = gameDAO.login(emailField.getText(), new String(passwordField.getPassword()));
+	        		if(userToken==null)
 	        		{
 		        	wrongLoginLabel.setText("Wrong email/password");
 		    		emailField.setText("");

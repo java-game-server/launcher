@@ -55,7 +55,7 @@ public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelC
 	{
 		this.frameContent = newPanel;
 		frameContent.setOnPanelChangeListener(this);
-		invalidate();
+		revalidate();
 		repaint();
 	}
 }

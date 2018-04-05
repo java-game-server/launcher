@@ -11,7 +11,7 @@ import com.apporelbotna.gameserver.stubs.AuthenticatedUser;
 import com.apporelbotna.gameserver.stubs.Token;
 import com.apporelbotna.gameserver.stubs.User;
 
-public class ApplicationFrame extends JFrame implements OnPanelChangeListener
+public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelChangeListener
 {
 	private static final long serialVersionUID = -4370492171907517451L;
 

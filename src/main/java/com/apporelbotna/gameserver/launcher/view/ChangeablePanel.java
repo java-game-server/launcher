@@ -6,6 +6,11 @@ public abstract class ChangeablePanel extends JPanel
 {
 	private static final long serialVersionUID = -4042634172511380956L;
 
+	public interface OnPanelChangeListener
+	{
+		void onPanelChange(ChangeablePanel newPanel);
+	}
+
 	private transient OnPanelChangeListener onPanelChangeListener;
 
 	public OnPanelChangeListener getOnPanelChangeListener()

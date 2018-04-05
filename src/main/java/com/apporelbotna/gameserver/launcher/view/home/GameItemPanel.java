@@ -20,6 +20,8 @@ import com.apporelbotna.gameserver.stubs.Game;
 public class GameItemPanel extends JPanel
 {
 	private static final long serialVersionUID = -7787888816232211277L;
+	
+	public static final int HEIGHT = 93;
 
 	interface OnGameSelectedListener
 	{
@@ -44,7 +46,7 @@ public class GameItemPanel extends JPanel
 
 		JLabel gameImg = new JLabel();
 		gameImg.setForeground(Color.WHITE);
-		gameImg.setBounds(0, 0, 94, 93);
+		gameImg.setBounds(0, 0, 94, HEIGHT);
 		
 		// TODO sacar getImgUrlAsImage a Game (stubs)
 		try

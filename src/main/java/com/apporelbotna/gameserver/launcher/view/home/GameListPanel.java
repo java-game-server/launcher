@@ -42,6 +42,21 @@ public class GameListPanel extends JPanel
 				listener));
 		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"),
 				listener));
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"),
+				listener));
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"),
+				listener));
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"),
+				listener));
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"),
+				listener));
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"),
+				listener));
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"),
+				listener));
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"),
+				listener));
+		this.setSize(getWidth(), GameItemPanel.HEIGHT * 14);
 		revalidate();
 		repaint();
 	}

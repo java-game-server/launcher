@@ -37,6 +37,7 @@ public class GameExecutable
 
 		try
 		{
+			logger.debug(command);
 			return Runtime.getRuntime().exec(command);
 		}
 		catch (IOException e)

@@ -3,12 +3,12 @@ package com.apporelbotna.gameserver.launcher.view.home;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import com.apporelbotna.gameserver.launcher.view.ChangeablePanel;
 import com.apporelbotna.gameserver.stubs.Game;
 
-public class HomeMainPanel extends JPanel implements GameItemPanel.OnGameSelectedListener
+public class HomeMainPanel extends ChangeablePanel implements GameItemPanel.OnGameSelectedListener
 {
 	private static final long serialVersionUID = 7003757130413876364L;
 

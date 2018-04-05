@@ -19,6 +19,8 @@ import com.apporelbotna.gameserver.stubs.Game;
 public class SelectedGamePanel extends JPanel
 {
 	private static final long serialVersionUID = -3406917201768807474L;
+	private static final String DEFAULT_IMG_URL =
+			"https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg";
 
 	private JLabel gameImg;
 	private JLabel gameName;
@@ -34,7 +36,7 @@ public class SelectedGamePanel extends JPanel
 		gameImg = new JLabel();
 		gameImg.setBounds(10, 148, 489, 369);
 		Jenasso
-			.from("https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg")
+			.from(DEFAULT_IMG_URL)
 			.loadInto(gameImg)
 			.and().scaleToFit().please();
 		add(gameImg);

@@ -28,33 +28,33 @@ public class GameListPanel extends JPanel
 	{
 		removeAll();
 		// TODO repeat this for each game of GameDAO.findGames()
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
+		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
 				listener));
 		this.setSize(getWidth(), GameItemPanel.HEIGHT * 14);
 		revalidate();

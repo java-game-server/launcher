@@ -4,11 +4,17 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 
+import com.apporelbotna.gameserver.launcher.view.util.ImageUtils;
 import com.apporelbotna.gameserver.stubs.Game;
 
 public class GameItemPanel extends JPanel
@@ -37,13 +43,25 @@ public class GameItemPanel extends JPanel
 		setLayout(null);
 
 		JLabel gameImg = new JLabel();
-		gameImg.setText("gameImg");
-		// TODO meter imagen con lib o algo gameImg.setIcon(new ImageIcon(getClass().getResource()));
 		gameImg.setForeground(Color.WHITE);
 		gameImg.setBounds(0, 0, 94, 93);
+		
+		// TODO sacar getImgUrlAsImage a Game (stubs)
+		try
+		{
+			BufferedImage image = ImageIO.read(new URL(
+					"https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"));
+			gameImg.setIcon(new ImageIcon(ImageUtils.scaleToFit(image, gameImg)));
+		}
+		catch (IOException e1)
+		{
+			e1.printStackTrace();
+		}
+		// extract me
+		
 		add(gameImg);
 
-		JLabel gameName = new JLabel("Game name");
+		JLabel gameName = new JLabel(game.getName());
 		gameName.setForeground(Color.WHITE);
 		gameName.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 21));
 		gameName.setBounds(104, 19, 122, 49);

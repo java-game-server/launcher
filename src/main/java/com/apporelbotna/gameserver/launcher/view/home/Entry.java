@@ -21,21 +21,17 @@ public class Entry extends JFrame
 	public static void main(String[] args)
 	{
 		AuthenticatedUser.create(new User("jenduliva"), new Token("1111"));
-		EventQueue.invokeLater(new Runnable()
-		{
-			@Override
-			public void run()
+		EventQueue.invokeLater(() -> {
+			try
 			{
-				try
-				{
-					Entry frame = new Entry();
-					frame.setVisible(true);
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
+				Entry frame = new Entry();
+				frame.setVisible(true);
 			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+
 		});
 	}
 

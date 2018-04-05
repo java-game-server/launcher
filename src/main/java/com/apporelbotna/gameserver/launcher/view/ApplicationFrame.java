@@ -6,6 +6,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
 
+import com.apporelbotna.gameserver.launcher.view.access.LoginPanel;
+import com.apporelbotna.gameserver.launcher.view.access.RegisterPanel;
 import com.apporelbotna.gameserver.launcher.view.home.HomeMainPanel;
 import com.apporelbotna.gameserver.stubs.AuthenticatedUser;
 import com.apporelbotna.gameserver.stubs.Token;
@@ -39,12 +41,12 @@ public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelC
 
 	public ApplicationFrame()
 	{
-		frameContent = new HomeMainPanel();
+		frameContent = new LoginPanel();
 		frameContent.setOnPanelChangeListener(this);
 		frameContent.setBorder(new EmptyBorder(5, 5, 5, 5));
 		frameContent.setLayout(new BorderLayout(0, 0));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1253, 883);
+		setBounds(0, 0, 1253, 883);
 		add(frameContent);
 	}
 

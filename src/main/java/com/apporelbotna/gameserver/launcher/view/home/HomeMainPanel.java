@@ -11,19 +11,18 @@ public class HomeMainPanel extends JPanel implements GameItemPanel.OnGameSelecte
 {
 	private static final long serialVersionUID = 7003757130413876364L;
 
-	private JScrollPane gameListPanel;
+	private JScrollPane gameListScroll;
+	private GameListPanel gameListPanel;
 	private SelectedGamePanel selectedGamePanel;
 
 	public HomeMainPanel()
 	{
-		gameListPanel = new JScrollPane();
+		gameListScroll = new JScrollPane();
+		gameListPanel = new GameListPanel();
 		selectedGamePanel = new SelectedGamePanel();
-		// TODO repeat this for each game of GameDAO.findGames()
-		gameListPanel.getViewport().add(new GameItemPanel(
-				new Game(1, "Ponsh", "Pretty fucking amazing game", "PongGame", "ohoo"), this), 0);
+		
+		gameListScroll.getViewport().add(gameListPanel);
 		init();
-		gameListPanel.revalidate();
-		gameListPanel.repaint();
 	}
 
 	private void init()
@@ -31,17 +30,27 @@ public class HomeMainPanel extends JPanel implements GameItemPanel.OnGameSelecte
 		setBounds(100, 100, 1235, 844);
 		setLayout(null);
 
-		gameListPanel.setBounds(10, 11, 274, 822);
-		add(gameListPanel);
+		gameListScroll.setBounds(10, 11, 274, 822);
+		add(gameListScroll);
 
 		selectedGamePanel.setBackground(Color.DARK_GRAY);
 		selectedGamePanel.setBounds(294, 11, 931, 822);
 		add(selectedGamePanel);
+		
+		reloadGameList();
+		
 	}
 
 	@Override
 	public void onGameSelected(Game game)
 	{
 		selectedGamePanel.updateGame(game);
+	}
+	
+	public void reloadGameList()
+	{
+		gameListPanel.reloadGameList(this);
+		revalidate();
+		repaint();
 	}
 }

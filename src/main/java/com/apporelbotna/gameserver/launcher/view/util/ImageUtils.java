@@ -5,7 +5,7 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JComponent;
+import javax.swing.JLabel;
 
 public class ImageUtils
 {
@@ -22,15 +22,15 @@ public class ImageUtils
 		g2.setRenderingHint(
 				RenderingHints.KEY_INTERPOLATION,
 				RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-		
+
 		g2.drawImage(image, 0, 0, width, height, null);
 		g2.dispose();
 
 		return resizedImg;
 	}
-	
-	public static Image scaleToFit(Image image, JComponent component)
+
+	public static Image scaleToFit(Image image, JLabel label)
 	{
-		return scale(image, component.getWidth(), component.getHeight());
+		return scale(image, label.getWidth(), label.getHeight());
 	}
 }

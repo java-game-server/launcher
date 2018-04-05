@@ -12,6 +12,7 @@ import javax.swing.JTextPane;
 
 import com.apporelbotna.gameserver.launcher.games.GameExecutable;
 import com.apporelbotna.gameserver.launcher.games.GameManager;
+import com.apporelbotna.gameserver.launcher.view.util.Jenasso;
 import com.apporelbotna.gameserver.stubs.AuthenticatedUser;
 import com.apporelbotna.gameserver.stubs.Game;
 
@@ -19,6 +20,7 @@ public class SelectedGamePanel extends JPanel
 {
 	private static final long serialVersionUID = -3406917201768807474L;
 
+	private JLabel gameImg;
 	private JLabel gameName;
 	private JTextPane gameDescription;
 	private String executableName = "PongClient";
@@ -28,6 +30,14 @@ public class SelectedGamePanel extends JPanel
 		setBounds(294, 11, 931, 822);
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
+
+		gameImg = new JLabel();
+		gameImg.setBounds(10, 148, 489, 369);
+		Jenasso
+			.from("https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg")
+			.loadInto(gameImg)
+			.and().scaleToFit().please();
+		add(gameImg);
 
 		gameName = new JLabel();
 		gameName.setForeground(Color.WHITE);
@@ -79,5 +89,9 @@ public class SelectedGamePanel extends JPanel
 		gameName.setText(game.getName());
 		gameDescription.setText(game.getDescription());
 		executableName = game.getExecutableName();
+		Jenasso
+			.from(game.getImgUri())
+			.loadInto(gameImg)
+			.and().scaleToFit().please();
 	}
 }

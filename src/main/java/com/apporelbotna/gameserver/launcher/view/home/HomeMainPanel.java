@@ -1,6 +1,7 @@
 package com.apporelbotna.gameserver.launcher.view.home;
 
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -21,6 +22,8 @@ public class HomeMainPanel extends JPanel implements GameItemPanel.OnGameSelecte
 		gameListPanel = new GameListPanel();
 		selectedGamePanel = new SelectedGamePanel();
 
+		gameListPanel.setAutoscrolls(true);
+		gameListScroll.setPreferredSize(new Dimension(264, 811));
 		gameListScroll.getViewport().add(gameListPanel);
 		init();
 	}

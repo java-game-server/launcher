@@ -66,18 +66,9 @@ public class SelectedGamePanel extends JPanel
 				GameManager gameManager = GameManager.getInstance();
 				if (!gameManager.isGameRunning())
 				{
-					Process game = GameManager.getInstance().launchGame(
+					GameManager.getInstance().launchGame(
 							new GameExecutable(executableName, AuthenticatedUser.getInstance().getUser(),
 									AuthenticatedUser.getInstance().getToken()));
-					try
-					{
-						game.waitFor();
-					}
-					catch (InterruptedException e)
-					{
-						Thread.currentThread().interrupt();
-						e.printStackTrace();
-					}
 				}
 			}
 		});

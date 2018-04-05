@@ -26,7 +26,7 @@ public class GameExecutable
 		this.userToken = userToken;
 	}
 
-	public Process execute()
+	public void execute()
 	{
 		String command =
 				"java -jar "
@@ -38,12 +38,13 @@ public class GameExecutable
 		try
 		{
 			logger.debug(command);
-			return Runtime.getRuntime().exec(command);
+			final Process game = Runtime.getRuntime().exec(command);
+			game.waitFor();
+			logger.debug(String.valueOf(game.exitValue()));
 		}
-		catch (IOException e)
+		catch (IOException | InterruptedException e)
 		{
 			logger.error(e.getMessage());
 		}
-		return null;
 	}
 }

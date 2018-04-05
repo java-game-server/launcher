@@ -22,7 +22,7 @@ public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelC
 	 */
 	public static void main(String[] args)
 	{
-		AuthenticatedUser.create(new User("jenduliva"), new Token("1111"));
+		AuthenticatedUser.create(new User("jenduliva"), new Token("1111")); // TODO quitar cuando se cree en el login
 		EventQueue.invokeLater(() -> {
 			try
 			{

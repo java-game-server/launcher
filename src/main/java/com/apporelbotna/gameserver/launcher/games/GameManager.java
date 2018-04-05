@@ -14,10 +14,11 @@ public class GameManager
 		return instance;
 	}
 
-	public Process launchGame(GameExecutable gameExecutable)
+	public void launchGame(GameExecutable gameExecutable)
 	{
 		gameRunning = true;
-		return gameExecutable.execute();
+		gameExecutable.execute();
+		gameRunning = false;
 	}
 
 	public boolean isGameRunning()

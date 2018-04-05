@@ -23,6 +23,11 @@ public class GameItemPanel extends JPanel
 	private Game game;
 	private OnGameSelectedListener onGameSelectedListener;
 
+	public GameItemPanel(Game game)
+	{
+		this(game, null);
+	}
+
 	public GameItemPanel(Game game, OnGameSelectedListener onGameSelectedListener)
 	{
 		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
@@ -51,7 +56,7 @@ public class GameItemPanel extends JPanel
 
 		setVisible(true);
 
-		addMouseListener(new MouseAdapter()
+		this.addMouseListener(new MouseAdapter()
 		{
 			@Override
 			public void mouseClicked(MouseEvent arg0)

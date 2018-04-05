@@ -2,18 +2,24 @@ package com.apporelbotna.gameserver.launcher.view.home;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.util.List;
 
 import javax.swing.JPanel;
 
 import com.apporelbotna.gameserver.launcher.view.home.GameItemPanel.OnGameSelectedListener;
+import com.apporelbotna.gameserver.persistencewsclient.GameDAO;
+import com.apporelbotna.gameserver.stubs.AuthenticatedUser;
 import com.apporelbotna.gameserver.stubs.Game;
 
 public class GameListPanel extends JPanel
 {
 	private static final long serialVersionUID = -5410155912413042664L;
 
+	private transient GameDAO gameDAO;
+
 	public GameListPanel()
 	{
+		gameDAO = new GameDAO();
 		init();
 	}
 
@@ -27,36 +33,9 @@ public class GameListPanel extends JPanel
 	public void reloadGameList(OnGameSelectedListener listener)
 	{
 		removeAll();
-		// TODO repeat this for each game of GameDAO.findGames()
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		add(new GameItemPanel(new Game(1, "Ponsh", "Pretty fucking amazing game", "PongClient", "https://png.pngtree.com/element_pic/16/11/22/56551424a96d8b34d760f5c4fc338e07.jpg"),
-				listener));
-		this.setSize(getWidth(), GameItemPanel.HEIGHT * 14);
+		List<Game> games = gameDAO.findAllGamesByUser(AuthenticatedUser.getInstance().getUser());
+		games.forEach(g -> add(new GameItemPanel(g), listener));
+		this.setSize(getWidth(), GameItemPanel.HEIGHT * games.size());
 		revalidate();
 		repaint();
 	}

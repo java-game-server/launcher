@@ -7,11 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
 
 import com.apporelbotna.gameserver.launcher.view.access.LoginPanel;
-import com.apporelbotna.gameserver.launcher.view.access.RegisterPanel;
-import com.apporelbotna.gameserver.launcher.view.home.HomeMainPanel;
-import com.apporelbotna.gameserver.stubs.AuthenticatedUser;
-import com.apporelbotna.gameserver.stubs.Token;
-import com.apporelbotna.gameserver.stubs.User;
 
 public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelChangeListener
 {
@@ -24,7 +19,6 @@ public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelC
 	 */
 	public static void main(String[] args)
 	{
-		AuthenticatedUser.create(new User("jenduliva"), new Token("1111")); // TODO quitar cuando se cree en el login
 		EventQueue.invokeLater(() -> {
 			try
 			{

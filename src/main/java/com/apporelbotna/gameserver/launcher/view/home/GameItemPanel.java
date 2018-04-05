@@ -25,8 +25,8 @@ public class GameItemPanel extends JPanel
 		void onGameSelected(Game game);
 	}
 
-	private Game game;
-	private OnGameSelectedListener onGameSelectedListener;
+	private transient Game game;
+	private transient OnGameSelectedListener onGameSelectedListener;
 
 	public GameItemPanel(Game game)
 	{

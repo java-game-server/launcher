@@ -17,11 +17,12 @@ public class HomeMainPanel extends JPanel implements GameItemPanel.OnGameSelecte
 
 	public HomeMainPanel()
 	{
+		gameListScroll = new JScrollPane();
 		gameListPanel = new GameListPanel();
-		gameListScroll = new JScrollPane(gameListPanel);
 		selectedGamePanel = new SelectedGamePanel();
+
+		gameListScroll.getViewport().add(gameListPanel);
 		init();
-		refreshGameList();
 	}
 
 	private void init()
@@ -30,24 +31,25 @@ public class HomeMainPanel extends JPanel implements GameItemPanel.OnGameSelecte
 		setLayout(null);
 
 		gameListScroll.setBounds(10, 11, 274, 822);
-//		gameListPanel.setBounds(10, 11, 274, 822);
 		add(gameListScroll);
 
 		selectedGamePanel.setBackground(Color.DARK_GRAY);
 		selectedGamePanel.setBounds(294, 11, 931, 822);
 		add(selectedGamePanel);
 
-		refreshGameList();
-	}
-
-	public void refreshGameList()
-	{
-		gameListPanel.refreshGameList(this);
+		reloadGameList();
 	}
 
 	@Override
 	public void onGameSelected(Game game)
 	{
 		selectedGamePanel.updateGame(game);
+	}
+
+	public void reloadGameList()
+	{
+		gameListPanel.reloadGameList(this);
+		revalidate();
+		repaint();
 	}
 }

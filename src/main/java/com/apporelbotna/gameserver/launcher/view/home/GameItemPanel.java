@@ -30,7 +30,7 @@ public class GameItemPanel extends JPanel
 
 	public GameItemPanel(Game game)
 	{
-		this(game, null);
+//		this(game, null);	//TODO Peter null pointer
 	}
 
 	/**

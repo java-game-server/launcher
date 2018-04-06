@@ -35,11 +35,11 @@ public class SelectedGamePanel extends JPanel
 
 		gameImg = new JLabel();
 		gameImg.setBounds(10, 148, 489, 369);
-		Jenasso
-			.from(DEFAULT_IMG_URL)
-			.loadInto(gameImg)
-			.and().scaleToFit().please();
-		add(gameImg);
+//		Jenasso
+//			.from(DEFAULT_IMG_URL) 
+//			.loadInto(gameImg)	//TODO peter jan No es peter como tal, pero es como que se queda colgado
+//			.and().scaleToFit().please();
+//		add(gameImg);
 
 		gameName = new JLabel();
 		gameName.setForeground(Color.WHITE);
@@ -66,7 +66,11 @@ public class SelectedGamePanel extends JPanel
 				GameManager gameManager = GameManager.getInstance();
 				if (!gameManager.isGameRunning())
 				{
-					GameManager.getInstance().launchGame(
+					// TODO No se si tiene algo que ver que GameManager tenga gameRunning false, quizas es porque lo 
+					// estoy testeando sin ver las fotos de los juegos y por eso alomejor no tengo una fila con el juego seleccionado y peta, pero los parametros los pasa bien
+					// aka DEBUG com.apporelbotna.gameserver.launcher.games.GameExecutable - java -jar games/PongClient.jar jan@jan.com fb57c6fdb55a44379fc8f497c87898b4
+					// DEBUG com.apporelbotna.gameserver.launcher.games.GameExecutable - 1
+					GameManager.getInstance().launchGame(   
 							new GameExecutable(executableName, AuthenticatedUser.getInstance().getUser(),
 									AuthenticatedUser.getInstance().getToken()));
 				}

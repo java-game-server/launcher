@@ -34,7 +34,7 @@ public class GameListPanel extends JPanel
 	{
 		removeAll();
 		List<Game> games = gameDAO.findAllGamesByUser(AuthenticatedUser.getInstance().getUser());
-		games.forEach(g -> add(new GameItemPanel(g), listener));
+//		games.forEach(g -> add(new GameItemPanel(g), listener)); //TODO Jan aqui peter
 		this.setSize(getWidth(), GameItemPanel.HEIGHT * games.size());
 		revalidate();
 		repaint();

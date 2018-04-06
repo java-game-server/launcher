@@ -79,7 +79,7 @@ public class RegisterPanel extends ChangeablePanel
 		emailRegisterField.setToolTipText("Type Username");
 
 		add(emailRegisterField);
-		emailRegisterField.setBounds(506, 390, 240, 30);
+		emailRegisterField.setBounds(460, 390, 350, 30);
 
 		usernameRegisterLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
 		usernameRegisterLabel.setForeground(new java.awt.Color(240, 240, 240));

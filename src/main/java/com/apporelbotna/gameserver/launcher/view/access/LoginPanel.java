@@ -72,7 +72,7 @@ public class LoginPanel extends ChangeablePanel
 		emailField.setHorizontalAlignment(SwingConstants.CENTER);
 		emailField.setToolTipText("Type Username");
 		add(emailField);
-		emailField.setBounds(506, 397, 240, 30);
+		emailField.setBounds(460, 397, 350, 30);
 
 		passwordLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
 		passwordLabel.setForeground(new java.awt.Color(240, 240, 240));
@@ -138,7 +138,8 @@ public class LoginPanel extends ChangeablePanel
 		});
 
 		getAccessibleContext().setAccessibleName("");
-	}	
+	}
+	
 
 }
 	

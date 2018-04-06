@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
 	// PersistenceWS Client
-	compileOnly 'com.github.java-game-server:ws-java-client:3.0.5'
+	compileOnly 'com.github.java-game-server:ws-java-client:3.0.6'
 	
 	// JavaFX
 	compileOnly group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'

@@ -13,6 +13,7 @@ import javax.swing.JTextPane;
 import com.apporelbotna.gameserver.launcher.games.GameExecutable;
 import com.apporelbotna.gameserver.launcher.games.GameManager;
 import com.apporelbotna.gameserver.launcher.view.util.Jenasso;
+import com.apporelbotna.gameserver.persistencewsclient.GameDAO;
 import com.apporelbotna.gameserver.stubs.AuthenticatedUser;
 import com.apporelbotna.gameserver.stubs.Game;
 
@@ -25,6 +26,7 @@ public class SelectedGamePanel extends JPanel
 	private JLabel gameImg;
 	private JLabel gameName;
 	private JTextPane gameDescription;
+	private JTextPane ranking;
 	private String executableName = "PongClient";
 
 	public SelectedGamePanel()
@@ -56,6 +58,11 @@ public class SelectedGamePanel extends JPanel
 		gameDescription.setBackground(Color.DARK_GRAY);
 		gameDescription.setBounds(542, 148, 293, 369);
 		add(gameDescription);
+		
+		ranking = new JTextPane();
+		ranking.setBounds(10, 521, 489, 277);
+		ranking.setText("");
+		add(ranking);
 
 		JButton btnPlay = new JButton("PLAY!");
 		btnPlay.addMouseListener(new MouseAdapter()
@@ -79,6 +86,8 @@ public class SelectedGamePanel extends JPanel
 		btnPlay.setFont(new Font("Yu Gothic UI", Font.BOLD, 36));
 		btnPlay.setBounds(542, 539, 293, 90);
 		add(btnPlay);
+		
+		
 	}
 
 	public void updateGame(Game game)
@@ -90,5 +99,8 @@ public class SelectedGamePanel extends JPanel
 			.from(game.getImgUri())
 			.loadInto(gameImg)
 			.and().scaleToFit().please();
+		GameDAO gameDAO = new GameDAO();
+		ranking.setText(gameDAO.getRankingPointsByGameAndUser(game.getId()).toString());
+		
 	}
 }

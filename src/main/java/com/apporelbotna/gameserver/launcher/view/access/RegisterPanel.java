@@ -134,10 +134,12 @@ public class RegisterPanel extends ChangeablePanel
 		add(errorFieldLabel, 0);
 		errorFieldLabel.setBounds(12, 750, 1229, 30);
 
+		background.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
 		background.setIcon(new ImageIcon(RegisterPanel.class
 				.getResource("/com/apporelbotna/gameserver/launcher/resources/Register.png"))); // NOI18N
+		background.setToolTipText("");
 		add(background);
-		background.setBounds(0, 0, 1253, 883);
+		background.setBounds(0, 0, 1235, 844);
 
 		registerLoginBtn.addActionListener(a -> {
 			listener.onPanelChange(new LoginPanel());

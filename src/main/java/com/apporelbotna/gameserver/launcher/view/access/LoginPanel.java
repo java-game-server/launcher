@@ -110,7 +110,8 @@ public class LoginPanel extends ChangeablePanel
 		background.setBounds(0, 0, 1235, 844);
 
 		registerBtn.addActionListener(a -> {
-			listener.onPanelChange(new RegisterPanel());
+			listener.onPanelChange(new RegisterPanel());	
+
 		});
 
 		loginBtn.addActionListener(a -> {
@@ -138,4 +139,7 @@ public class LoginPanel extends ChangeablePanel
 
 		getAccessibleContext().setAccessibleName("");
 	}
+
 }
+	
+

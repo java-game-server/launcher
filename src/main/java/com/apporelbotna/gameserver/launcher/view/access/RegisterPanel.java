@@ -181,5 +181,7 @@ public class RegisterPanel extends ChangeablePanel
 				}
 			}
 		});
+
+		setVisible(true);
 	}
 }

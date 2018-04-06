@@ -35,7 +35,6 @@ public class LoginPanel extends ChangeablePanel
 	public LoginPanel()
 	{
 		super();
-		background = new javax.swing.JLabel();
 		init();
 	}
 
@@ -47,7 +46,7 @@ public class LoginPanel extends ChangeablePanel
 
 	private void init()
 	{
-
+		background = new javax.swing.JLabel();
 		emailLabel = new javax.swing.JLabel();
 		emailLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		emailField = new javax.swing.JTextField();

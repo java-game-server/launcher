@@ -6,10 +6,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.apporelbotna.gameserver.launcher.view.access.LoginPanel;
 
 public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelChangeListener
 {
+	private static final Logger logger = LoggerFactory.getLogger(ApplicationFrame.class);
 	private static final long serialVersionUID = -4370492171907517451L;
 
 	private ChangeablePanel frameContent;
@@ -27,7 +31,7 @@ public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelC
 			}
 			catch (Exception e)
 			{
-				e.printStackTrace();
+				logger.error(e.getMessage());
 			}
 
 		});
@@ -49,7 +53,7 @@ public class ApplicationFrame extends JFrame implements ChangeablePanel.OnPanelC
 	{
 		this.frameContent = newPanel;
 		frameContent.setOnPanelChangeListener(this);
+		frameContent.revalidate();
 		revalidate();
-		repaint();
 	}
 }

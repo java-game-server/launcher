@@ -46,6 +46,7 @@ public class LoginPanel extends ChangeablePanel
 
 	private void init()
 	{
+		
 		background = new javax.swing.JLabel();
 		emailLabel = new javax.swing.JLabel();
 		emailLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -65,42 +66,42 @@ public class LoginPanel extends ChangeablePanel
 		emailLabel.setForeground(new java.awt.Color(240, 240, 240));
 		emailLabel.setText("email");
 		add(emailLabel);
-		emailLabel.setBounds(12, 450, 1229, 30);
+		emailLabel.setBounds(12, 365, 1229, 30);
 
 		emailField.setFont(new java.awt.Font("Blackoak Std", 0, 13)); // NOI18N
 		emailField.setHorizontalAlignment(SwingConstants.CENTER);
 		emailField.setToolTipText("Type Username");
 		add(emailField);
-		emailField.setBounds(506, 482, 240, 30);
+		emailField.setBounds(506, 397, 240, 30);
 
 		passwordLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
 		passwordLabel.setForeground(new java.awt.Color(240, 240, 240));
 		passwordLabel.setText("Password");
 		add(passwordLabel);
-		passwordLabel.setBounds(12, 550, 1229, 30);
+		passwordLabel.setBounds(12, 450, 1229, 30);
 
 		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
 		add(passwordField);
-		passwordField.setBounds(506, 590, 240, 30);
+		passwordField.setBounds(506, 490, 240, 30);
 
 		loginBtn.setBackground(new java.awt.Color(0, 0, 0));
 		loginBtn.setFont(new java.awt.Font("Blackoak Std", 1, 16)); // NOI18N
 		loginBtn.setText("OkeyOkey");
 		add(loginBtn);
-		loginBtn.setBounds(506, 680, 240, 40);
+		loginBtn.setBounds(490, 545, 270, 40);
 
 		registerBtn.setBackground(new java.awt.Color(0, 0, 0));
 		registerBtn.setText("\u00A1Register here!");
 		registerBtn.setFont(new Font("Blackoak Std", Font.BOLD, 16));
 		registerBtn.setBackground(Color.BLACK);
-		registerBtn.setBounds(450, 790, 350, 30);
+		registerBtn.setBounds(450, 755, 350, 30);
 		add(registerBtn);
 
 		wrongLoginLabel.setFont(new java.awt.Font("Blackoak Std", 0, 16)); // NOI18N
 		wrongLoginLabel.setForeground(Color.RED);
 		wrongLoginLabel.setText("");
 		add(wrongLoginLabel, 0);
-		wrongLoginLabel.setBounds(12, 637, 1229, 30);
+		wrongLoginLabel.setBounds(12, 602, 1229, 30);
 
 		background.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
 		background.setIcon(new ImageIcon(LoginPanel.class
@@ -111,7 +112,6 @@ public class LoginPanel extends ChangeablePanel
 
 		registerBtn.addActionListener(a -> {
 			listener.onPanelChange(new RegisterPanel());	
-
 		});
 
 		loginBtn.addActionListener(a -> {
@@ -138,7 +138,7 @@ public class LoginPanel extends ChangeablePanel
 		});
 
 		getAccessibleContext().setAccessibleName("");
-	}
+	}	
 
 }
 	

@@ -35,11 +35,11 @@ public class SelectedGamePanel extends JPanel
 
 		gameImg = new JLabel();
 		gameImg.setBounds(10, 148, 489, 369);
-//		Jenasso
-//			.from(DEFAULT_IMG_URL) 
-//			.loadInto(gameImg)	//TODO peter jan No es peter como tal, pero es como que se queda colgado
-//			.and().scaleToFit().please();
-//		add(gameImg);
+		Jenasso
+			.from(DEFAULT_IMG_URL) 
+			.loadInto(gameImg)	
+			.and().scaleToFit().please();
+		add(gameImg);
 
 		gameName = new JLabel();
 		gameName.setForeground(Color.WHITE);
